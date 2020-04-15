@@ -1,0 +1,52 @@
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    text-emphasis: bold;
+}
+body {
+    background-color: rgba(180, 180, 180,0.3);
+}
+table#expTable {
+    width:100%;
+}
+table#expTable tr td{
+    color:#ddd;
+    font-size: 160%;
+    border: 1;
+    padding: 20px 0px 20px 10px;
+    text-align: left;
+    position: relative;
+    border: 2px solid rgba(115, 173, 33, 0.527);
+    border-radius: 10px;
+}
+table#expTable tr td p{
+    width:80%;
+}
+table#expTable tr:nth-child(odd){
+    background-color: rgba(42, 55, 74, 0.86);
+    border: 20px solid;
+    border-radius: 10px;
+}
+table#expTable tr:nth-child(even){
+    background:rgba(75, 119, 60, 0.5);
+    border: 20px solid;
+    border-radius: 10px;
+}
+table#expTable tr td input{
+    width: 10%;
+    position: absolute;
+    top: 25%;
+    right: 15px;
+    height: 50%;
+    text-align: center;
+    font-size: medium;
+    border-radius: 10px;
+}
+.clear {
+    background-color: white;
+}
+.correct {
+    background-color: rgb(113, 155, 132);
+}.wrong {
+    background-color: lightpink;
+}

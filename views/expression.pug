@@ -1,0 +1,24 @@
+extends layout
+block content
+	h1= title
+	script(src="/javascripts/checkAnswers.js")
+
+	div#allExp
+		table#expTable
+			thead
+			tbody
+				each value, index in locals.expListLoc
+					if (index+1) % 3 == 1
+						tr
+							td 
+								div#expCell 
+									label(for='ans'+index) #{locals.expListLoc[index]}
+									input(type='text', id='ans'+index value='' onfocusout="chkAns(event)")
+							td 
+								div#expCell 
+									label(for='ans'+ index+1) #{locals.expListLoc[index+1]}
+									input(type='text', id='ans'+index+1, value='' onfocusout="chkAns(event)")
+							td 
+								div#expCell 
+									label(for='ans'+ index+2) #{locals.expListLoc[index+2]}
+									input(type='text', id='ans'+index+2, value='' onfocusout="chkAns(event)")
