@@ -8,10 +8,10 @@
 
 # ignore all files in VSCode directory
 .vscode/
+*.code
 
 # ignore node modules dependencies folder
 node_modules/
 
 #ignore local sys files
-.DS_Store
 .DS_Store
