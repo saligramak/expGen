@@ -9,16 +9,37 @@ router.get('/', function(req, res, next) {
         for(expInd = 0; expInd < 18; expInd++) {
             expList[expInd] = genNextExp();
         }
-    var locals = {title:'Generate Expression', expListLoc: expList};
+    var locals = {title:'Operator Precedence Trainer', expListLoc: expList};
     res.render('expression', locals);
     }
     catch(err) {
       res.send('Exception generating expressions: ' + err.message);
     }
-  
-  });
+});
+
+router.get('/genNewExpList', function(req, res, next) {
+
+    try {
+        var expList = genExpList();
+        res.send(JSON.stringify(expList));
+    }
+    catch(err) {
+        res.send('Exception generating expressions: ' + err.message);
+    }
+});
+
   
 module.exports = router;
+
+function genExpList() {
+    var nxtExp = genNextExp();
+    var expList = new Array(18);
+    var expInd = 1;
+    for(expInd = 0; expInd < 18; expInd++) {
+        expList[expInd] = genNextExp();
+    }
+    return expList;
+}
 
 function genNextExp(){
     var nxtRnd = 0, nxtOper = 0;
