@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
         for(expInd = 0; expInd < 18; expInd++) {
             expList[expInd] = genNextExp();
         }
-    var locals = {title:'Operator Precedence Trainer', expListLoc: expList};
+    var locals = {title:'Order of Operation Trainer', expListLoc: expList};
     res.render('expression', locals);
     }
     catch(err) {

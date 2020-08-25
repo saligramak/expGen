@@ -74,3 +74,26 @@ table#expTable tr td input{
     font-size: 16px;
     border-radius: 10px;
 }
+
+label.scoretitle {
+    /*background-color: #4CAF50; /* Green */
+    border: thick;
+    color: #4CAF50;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+label.score {
+    /*background-color: #4CAF50; /* Green */
+    border-style: double;
+    color: #4CAF50;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}

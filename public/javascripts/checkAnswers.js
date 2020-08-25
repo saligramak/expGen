@@ -2,10 +2,14 @@ function chkAns(event) {
     var expAnsElem = document.getElementById(event.target.id);
     var ans = (expAnsElem.value === JSON.stringify(eval(expAnsElem.labels[0].innerText)));
 
-   resetAnsBoxClass(expAnsElem);     //remove all style classes
+   var lastAns = resetAnsBoxClass(expAnsElem);     //remove all style classes, is last ans correct?
+   if(lastAns == 1) {
+       scoreApp.score--;
+   }
 
     if(ans) {
             expAnsElem.classList.add('correct');
+            scoreApp.score++;
     }
     else {
         if(expAnsElem.value == '') {
@@ -40,6 +44,7 @@ function updateExpList(respList) {
 }
 
 function resetAnsBoxClass(expAnsElem) {
+    var lastAns = 0;
     if(expAnsElem.classList.contains('clear')) {
         expAnsElem.classList.remove('clear');
     }
@@ -47,6 +52,17 @@ function resetAnsBoxClass(expAnsElem) {
         expAnsElem.classList.remove('wrong');
     }
     else if(expAnsElem.classList.contains('correct')) {
+        lastAns = 1;
         expAnsElem.classList.remove('correct');
     }
+
+    return lastAns;
 }
+
+var score = 0;
+const scoreApp = new Vue({
+    el: '#app',
+    data: {
+        score: 0
+    }
+})

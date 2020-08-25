@@ -1,7 +1,8 @@
 extends layout
 block content
 	h1= title
-	script(src="/javascripts/checkAnswers.js")
+	//script(src="https://unpkg.com/vue")
+	script(src="https://cdn.jsdelivr.net/npm/vue@2.6.12")
 
 	div#allExp
 		table#expTable
@@ -25,3 +26,8 @@ block content
 				
 		div#expLoad
 			a(class='button expLoadBtn' onclick="refreshExpList()") Update
+		
+		div(id='app' class='score')
+			label(class='scoretitle') Your score is! &nbsp 
+			label(class='score') {{ score }}
+		script(src="/javascripts/checkAnswers.js")
